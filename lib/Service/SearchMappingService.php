@@ -127,6 +127,7 @@ class SearchMappingService {
 
 		$this->improveSearchQuerying($request, $params['body']['query']);
 
+		$params['body']['aggs']['subtags']['terms']['field'] = "subtags";
 		return $params;
 	}
 
