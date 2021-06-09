@@ -35,6 +35,11 @@ use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
 use OCP\AppFramework\Bootstrap\IRegistrationContext;
+use OCA\FullTextSearch_ElasticSearch\Service\SearchMappingService;
+use OCA\FullTextSearch_ElasticSearch\Service\ConfigService;
+use OCA\FullTextSearch_ElasticSearch\Service\MiscService;
+use OCA\FullTextSearch_ElasticSearch\Service\UserStoragesService;
+use OCA\Files_External\Service\UserGlobalStoragesService;
 
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -64,6 +69,24 @@ class Application extends App implements IBootstrap {
 	 * @param IRegistrationContext $context
 	 */
 	public function register(IRegistrationContext $context): void {
+		// Make SearchMappingService also work without external storage
+		// if app is inactive or not installed.
+		$context->registerService(SearchMappingService::class, function($c) {
+			try{
+				$userStoragesService = $c->query(UserGlobalStoragesService::class);
+				return new SearchMappingService(
+					$c->query(ConfigService::class),
+					$c->query(MiscService::class),
+					new UserStoragesService($userStoragesService)
+				);
+			}
+			catch (\Psr\Container\ContainerExceptionInterface $e) {
+				return new SearchMappingService(
+					$c->query(ConfigService::class),
+					$c->query(MiscService::class)
+				);
+			}
+		});
 	}
 
 	/**
