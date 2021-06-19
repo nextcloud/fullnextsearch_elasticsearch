@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fcf1db4e32aeb356b63422d68d12ef06",
+    "content-hash": "691b7f5bddd25f6bd376f901bcbb5499",
     "packages": [
         {
             "name": "daita/my-small-php-tools",
-            "version": "v21.0.1",
+            "version": "v22.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/daita/my-small-php-tools.git",
-                "reference": "7d25743c2cd79521df3e3353a9358ec3931c6ad1"
+                "url": "https://github.com/ArtificialOwl/my-small-php-tools.git",
+                "reference": "5d859c50cbca9f5e7b0e03fab919496310d8b8f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daita/my-small-php-tools/zipball/7d25743c2cd79521df3e3353a9358ec3931c6ad1",
-                "reference": "7d25743c2cd79521df3e3353a9358ec3931c6ad1",
+                "url": "https://api.github.com/repos/ArtificialOwl/my-small-php-tools/zipball/5d859c50cbca9f5e7b0e03fab919496310d8b8f7",
+                "reference": "5d859c50cbca9f5e7b0e03fab919496310d8b8f7",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "daita\\MySmallPhpTools\\": "lib/"
+                    "ArtificialOwl\\MySmallPhpTools\\": "lib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -41,10 +41,10 @@
             ],
             "description": "My small PHP Tools",
             "support": {
-                "issues": "https://github.com/daita/my-small-php-tools/issues",
-                "source": "https://github.com/daita/my-small-php-tools/tree/v21.0.1"
+                "issues": "https://github.com/ArtificialOwl/my-small-php-tools/issues",
+                "source": "https://github.com/ArtificialOwl/my-small-php-tools/tree/v22.1.0"
             },
-            "time": "2021-04-19T21:42:37+00:00"
+            "time": "2021-06-17T22:35:19+00:00"
         },
         {
             "name": "elasticsearch/elasticsearch",
